@@ -1,91 +1,563 @@
-/*
-Error: Invalid CSS after "   	padding-top:": expected expression (e.g. 1px, bold), was "}"
-        on line 59 of scss/base/_index.scss
-        from line 33 of scss/styles.scss
+/**
+ * px to em conversion
+ * @link http://www.pjmccormick.com/sweet-sass-function-convert-px-em
+ * @requires {variable} $base-font-size
+ * @param {number} $target - size to convert
+ * @param {number} $context ($base-font-size) - context conversion is based on
+ * @example scss
+ * .foobar { padding-bottom: em(30); }
+ * @returns {number}
+ */
+/**
+ * px to rem
+ * @link http://www.pjmccormick.com/sweet-sass-function-convert-px-em
+ * @requires {variable} $base-font-size
+ * @param {number} $target - size to convert
+ * @param {number} $context ($base-font-size) - context conversion is based on
+ * @example scss
+ * .foobar { padding-bottom: rem(30); }
+ * @returns {number}
+ */
+/**
+ * em to px conversion
+ * @link http://www.pjmccormick.com/sweet-sass-function-convert-px-em
+ * @requires {variable} $base-font-size
+ * @param {number} $target - size to convert
+ * @param {number} $context ($base-font-size) - context conversion is based on
+ * @example scss
+ * .foobar { padding-bottom: px(30); }
+ * @returns {number}
+ */
+/**
+ * Aspect Ratio
+ * @param {number} $ratio-numerator - ratio numerator
+ * @param {number} $ratio-denominator - ratio denominator
+ * @example scss
+ * .foobar { padding-bottom: aspect-ratio(16,9); } // @returns 56.25%
+ * @returns {number}
+ */
+/**
+ * Aspect Ratio
+ * Based on Fixed Image Dimensions
+ * @param {number} $w - image width
+ * @param {number} $h - image height
+ * @example scss
+ * .foobar { padding: 0 0 aspect-ratio-fixed(1080, 720); } // @returns 66.666666666667%
+ * @returns {number}
+ */
+/**
+ * Context Calculator
+ * @param {number} $target
+ * @param {number} $context
+ * @example scss
+ * .foobar { padding-bottom: context-calc(30,15); }
+ * @returns {number}
+ */
+/**
+ * Strip Unit Values
+ * @link http://hugogiraudel.com/2013/08/12/sass-functions
+ * @param {string} $num
+ * @example scss
+ * .foobar { padding-bottom: strip-unit(30px); }
+ * @returns {number}
+ */
+/**
+ * SMACSS Theming
+ * @example scss
+ * .foobar {
+ *   background: #ff3377;
+ *   @include theme(beccapurple){
+ *     background: #663399;
+ *   }
+ * }
+ * @param {String} $name - theme name
+ */
+/**
+ * Buttons
+ * This customises your buttons with a different background color and text color.
+ * If no text color is specified it will default to white.
+ * @param {String} $color-background - background color
+ * @param {String} $color-text (#fff) - text color
+ * @example scss
+ * .foobar { @include btn(#f37) { ... } }
+ */
+/**
+ * Media Queries
+ * Allows you to use inline media queries.
+ * @link http://jakearchibald.github.com/sass-ie/
+ * @param {String} $breakpoint - breakpoint
+ * @param {String} $query (min-width) - query type
+ * @param {String} $type (screen) - media type
+ * @example scss
+ * .foobar { @include mq(20em) { ... } }
+ */
+/**
+ * IE Specific Styles
+ * @example scss
+ * .foobar {
+ *   .lt-ie8 & { @include old-ie { ... } }
+ *   .lt-ie9 & { @include old-ie { ... } }
+ * }
+ */
+/**
+ * Sass version of Sticky Footer by Ryan Fait
+ * @link http://ryanfait.com/sticky-footer/
+ * @param {String} $footer_height - height of footer including padding or borders
+ * @param {String} $root_selector (.site) - main wrapper element
+ * @param {String} $root_footer_selector (.push) - hidden element that "pushes" down the footer
+ * @param {String} $footer_selector (footer) - footer element
+ * @example scss
+ * .foobar { @include sticky-footer(4em) { ... } }
+ */
+/**
+ * Fullscreen Background for < IE8
+ * @link http://css-tricks.com/perfect-full-page-background-image/
+ * @example scss
+ * .foobar { @include fullscreen-bg() { ... } }
+ */
+/**
+ * @param {number} $opacity
+ * @example scss
+ * .foobar { @include opacity(4) { ... } }
+ */
+/**
+ * @link http://bit.ly/thoughtbot-bourbon-inline-block
+ * @require {mixin} old-ie
+ * @param {String} $alignment (baseline)
+ * @example scss
+ * .foobar { @include inline-block() { ... } }
+ */
+/**
+ * Retina Displays
+ * @param {String} $image - image url
+ * @param {String} $width - image width
+ * @param {String} $height - image height
+ * @example scss
+ * .foobar { @include image-2x('img/logo.png', 200px, 300px) { ... } }
+ */
+/**
+ * RGBA Fallback
+ * @param {String} $color
+ * @param {String} $percent
+ * @example scss
+ * .foobar { @include rgba-bg(#f37,.9) { ... } }
+ */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
 
-54:    }
-55: 				// Smaller Screen Media Queries // 
-56:     @media all and (min-width: 960px) {
-57:    	font-size: 3rem;
-58:    	padding-top:
-59:    }
-60: }
-61: 
-62: .left{
-63: 	width: 48%;
-64: 	float: left;
+body {
+  margin: 0; }
 
-Backtrace:
-scss/base/_index.scss:59
-scss/styles.scss:33
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:1165:in `expected'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/script/lexer.rb:220:in `expected!'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/script/parser.rb:573:in `assert_expr'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/script/parser.rb:62:in `parse'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:1027:in `sass_script'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:880:in `value!'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:753:in `block in try_declaration'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:1141:in `call'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:1141:in `rethrow'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:766:in `try_declaration'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:696:in `declaration_or_ruleset'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:661:in `block_child'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:653:in `block_contents'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:642:in `block'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:401:in `media_directive'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:219:in `special_directive'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:194:in `directive'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:661:in `block_child'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:653:in `block_contents'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:642:in `block'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:635:in `ruleset'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:660:in `block_child'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:653:in `block_contents'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:117:in `stylesheet'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/scss/parser.rb:42:in `parse'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/engine.rb:393:in `_to_tree'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/engine.rb:299:in `to_tree'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:323:in `block in visit_import'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/stack.rb:88:in `block in with_import'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/stack.rb:115:in `with_frame'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/stack.rb:88:in `with_import'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/stack.rb:79:in `block in with_base'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/stack.rb:115:in `with_frame'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/stack.rb:79:in `with_base'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/engine.rb:285:in `render_with_sourcemap'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `each'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:254:in `call'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
-/Users/cameronsandage/.rvm/gems/ruby-2.0.0-p598/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"   	padding-top:\": expected expression (e.g. 1px, bold), was \"}\"\A         on line 59 of scss/base/_index.scss\A         from line 33 of scss/styles.scss\A \A 54:    }\A 55: 				// Smaller Screen Media Queries // \A 56:     @media all and (min-width: 960px) {\A 57:    	font-size: 3rem;\A 58:    	padding-top:\A 59:    }\A 60: }\A 61: \A 62: .left{\A 63: 	width: 48%;\A 64: 	float: left;"; }
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden],
+template {
+  display: none; }
+
+a {
+  background: transparent; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+pre {
+  overflow: auto; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+button {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+*
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+html, body {
+  height: 100%; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  color: #333;
+  font-family: 'Gentium Book Basic', Georgia, serif; }
+
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  flex-direction: row;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  max-width: 1850px;
+  width: 100%; }
+  @media all and (min-width: 320px) {
+    .flex-container {
+      padding-left: 15px;
+      padding-right: 15px; } }
+  @media all and (min-width: 655px) {
+    .flex-container {
+      padding-left: 25px;
+      padding-right: 25px; } }
+  @media all and (min-width: 700px) {
+    .flex-container {
+      padding-left: 25px;
+      padding-right: 25px; } }
+  @media all and (min-width: 1022px) {
+    .flex-container {
+      padding-left: 50px;
+      padding-right: 50px;
+      justify-content: space-between; } }
+
+.header {
+  width: 100%;
+  height: 40px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #333; }
+
+.left {
+  width: 48%;
+  float: left;
+  font-size: 1.25em; }
+  @media all and (min-width: 320px) {
+    .left {
+      width: 50%;
+      font-size: .8em; } }
+  @media all and (min-width: 336px) {
+    .left {
+      width: 52%;
+      font-size: .9em; } }
+  @media all and (min-width: 655px) {
+    .left {
+      width: 50%; } }
+  @media all and (min-width: 700px) {
+    .left {
+      width: 50%; } }
+  @media all and (min-width: 1022px) {
+    .left {
+      width: 50%; } }
+
+.right {
+  width: 40%;
+  float: right;
+  text-align: right;
+  font-size: .7em;
+  padding-top: 9px; }
+  @media all and (min-width: 320px) {
+    .right {
+      width: 50%;
+      font-size: .6em;
+      padding-top: 4px; } }
+  @media all and (min-width: 336px) {
+    .right {
+      width: 48%;
+      font-size: .7em;
+      padding-top: 5px; } }
+  @media all and (min-width: 655px) {
+    .right {
+      width: 50%;
+      padding-right: 13px; } }
+  @media all and (min-width: 700px) {
+    .right {
+      width: 50%; } }
+  @media all and (min-width: 1022px) {
+    .right {
+      width: 50%; } }
+
+/* unvisited link */
+.header a:link {
+  color: #ccc;
+  text-decoration: none; }
+
+/* visited link */
+.header a:visited {
+  color: #ccc;
+  text-decoration: none; }
+
+/* mouse over link */
+.header a:hover {
+  color: #808080;
+  border-bottom: 1px solid #808080; }
+
+/* selected link */
+.header a:active {
+  color: 333;
+  text-decoration: none; }
+
+a.navigation-link {
+  padding: 0px 10px;
+  word-wrap: normal;
+  display: inline-block; }
+
+span {
+  padding-left: 15px; }
+  @media all and (min-width: 320px) {
+    span {
+      padding-left: 5px; } }
+  @media all and (min-width: 655px) {
+    span {
+      padding-left: 10px; } }
+
+.flex-project {
+  margin-top: 20px;
+  background-size: cover; }
+  @media all and (min-width: 320px) and (max-width: 529px) {
+    .flex-project {
+      background: pink;
+      width: 100%;
+      height: 165px; } }
+  @media all and (min-width: 530px) and (max-width: 629px) {
+    .flex-project {
+      background: purple;
+      width: 48%;
+      margin-right: 10px;
+      height: 240px; } }
+  @media all and (min-width: 630px) and (max-width: 749px) {
+    .flex-project {
+      background: teal;
+      width: 48%;
+      margin-right: 12px;
+      height: 240px; } }
+  @media all and (min-width: 750px) and (max-width: 999px) {
+    .flex-project {
+      background: red;
+      width: 31%;
+      margin-right: 14px;
+      height: 240px; } }
+  @media all and (min-width: 1000px) and (max-width: 1199px) {
+    .flex-project {
+      background: blue;
+      width: 32%;
+      margin-right: 12px;
+      height: 240px; } }
+  @media all and (min-width: 1200px) and (max-width: 1499px) {
+    .flex-project {
+      width: 24%;
+      background: yellow;
+      height: 240px; } }
+  @media all and (min-width: 1500px) {
+    .flex-project {
+      background: green;
+      width: 24%;
+      height: 240px; } }
+  .flex-project:first-child {
+    margin-right: 25px; }
+
+.project-info {
+  padding: 1rem;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  background: red; }
+
+.footer {
+  width: 100%;
+  height: 30px;
+  padding-top: 25px;
+  font-size: .5em;
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #333; }
+
+.border {
+  background: blue;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100; }
+
+.site {
+  position: absolute;
+  background: white;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  min-height: 100%; }
+
+.grid {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  .grid:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+.column {
+  width: 6.77966%;
+  float: left;
+  margin-right: 1.69492%;
+  background: pink;
+  height: 1000px;
+  opacity: .2; }
+  .column:last-child {
+    width: 6.77966%;
+    float: right;
+    margin-right: 0; }
+
+/*# sourceMappingURL=styles.css.map */

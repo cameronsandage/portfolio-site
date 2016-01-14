@@ -22,23 +22,49 @@ body{
 	font-family: 'Gentium Book Basic', Georgia, serif;
 }
 
-
+////////////////////////////////////////////// CONTAINER //////////////////////////////////////////////
 
 .flex-container{
 	display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
-    width: 60%;
-    margin: auto;
+    margin: 0 auto;
     flex-direction: row;
-    // justify-content: space-between;
     padding-bottom: 25px;
     padding-top: 25px;
+    max-width: 1850px;
+    width: 100%;	
+    	// Smaller Screen Media Queries // 
+   				@media all and (min-width: 320px) {
+   					padding-left: 15px;
+   					padding-right: 15px;
+   				}
+				
+			// Medium Screen Media Queries // 
+    			@media all and (min-width: 655px) {
+    				padding-left: 25px;
+   					padding-right: 25px;
+   				}
+
+   			// Large Screen Media Queries // 
+    			@media all and (min-width: 700px) {
+   					padding-left: 25px;
+   					padding-right: 25px;
+   				}
+
+   			// Extra Large Screen Media Queries // 
+    			@media all and (min-width: 1022px) {
+   					padding-left: 50px;
+   					padding-right: 50px;
+   					justify-content: space-between;
+   				}
 }
 
 
-// Header // 
+//END CONTAINER // 
+
+////////////////////////////////////////////// Header //////////////////////////////////////////////
 
 .header{
    width: 100%;
@@ -48,21 +74,40 @@ body{
    font-family: 'Montserrat', Helvetica, sans-serif;
    text-transform: uppercase;
    color: #333;
-				// Smaller Screen Media Queries // 
-   @media all and (min-width: 360px) {
-   	font-size: 2rem;
-   }
-				// Smaller Screen Media Queries // 
-    @media all and (min-width: 960px) {
-   	font-size: 3rem;
-   	padding-top:
-   }
 }
 
 .left{
 	width: 48%;
 	float: left;
 	font-size: 1.25em;
+			// Smaller Screen Media Queries // 
+   				@media all and (min-width: 320px) {
+   					width: 50%;
+   					font-size: .8em;
+   				}
+
+   				//// Special (Larger Phone) Screen Media Queries //// 
+   				@media all and (min-width: 336px) {
+   					width: 52%;
+   					font-size: .9em;
+   				}
+				
+			// Medium Screen Media Queries // 
+    			@media all and (min-width: 655px) {
+    				width: 50%;
+
+
+   				}
+
+   			// Large Screen Media Queries // 
+    			@media all and (min-width: 700px) {
+   					width: 50%;
+   				}
+
+   			// Extra Large Screen Media Queries // 
+    			@media all and (min-width: 1022px) {
+   					width: 50%;
+   				}
 }
 
 .right{
@@ -71,6 +116,36 @@ body{
 	text-align: right;
 	font-size: .7em;
 	padding-top: 9px;
+			// Smaller Screen Media Queries // 
+   				@media all and (min-width: 320px) {
+   					width: 50%;
+   					font-size: .6em;
+   					padding-top: 4px;
+   				}
+
+   				//// Special (Larger Phone) Screen Media Queries //// 
+   				@media all and (min-width: 336px) {
+   					width: 48%;
+   					font-size: .7em;
+   					padding-top: 5px;
+   				}
+				
+			// Medium Screen Media Queries // 
+    			@media all and (min-width: 655px) {
+    				width: 50%;
+    				padding-right: 13px;
+
+   				}
+
+   			// Large Screen Media Queries // 
+    			@media all and (min-width: 700px) {
+   					width: 50%;
+   				}
+
+   			// Extra Large Screen Media Queries // 
+    			@media all and (min-width: 1022px) {
+   					width: 50%;
+   				}
 }
 
 
@@ -106,30 +181,115 @@ a.navigation-link {
 
 span{
 	padding-left: 15px;
+			// Smaller Screen Media Queries // 
+   				@media all and (min-width: 320px) {
+   					padding-left: 5px;
+   				}
+				
+			// Medium Screen Media Queries // 
+    			@media all and (min-width: 655px) {
+    				padding-left: 10px;
+
+   				}
 }
 
-// Project Cards // 
+//END HEADER // 
+
+
+////////////////////////////////////////////// Project Cards //////////////////////////////////////////////
 
 .flex-project{
-  background: tomato;
-  padding: 5px;
-  width: 275px;
-  height: 175px;
   margin-top: 20px;
+  
+  background-size: cover;
+  			// Smaller Screen Media Queries // 
+   				@media all and (min-width: 320px) and (max-width: 529px) {
+   				background: pink;
+   				width: 100%;
+          height: 165px;
+
+   				}
+
+        //// Special (Larger Phone) Screen Media Queries //// 
+          @media all and (min-width: 530px) and (max-width: 629px){
+          background: purple;
+          width: 48%;
+          margin-right: 10px;
+          height: 240px;
+
+          }
+
+
+
+   			//// Special (Larger Phone) Screen Media Queries //// 
+   				@media all and (min-width: 630px) and (max-width: 749px){
+   				background: teal;
+   				width: 48%;
+          margin-right: 12px;
+          height: 240px;
+
+   				}
+
+        // /// Special (Tablet) Screen Media Queries ////
+        //   @media all and (min-width: 705px) and (max-width: 949px) {
+        //       width: 31%;
+        //       margin-right: 14px;
+        //       background: orange;
+        //       height: 240px;
+
+        //   }
+
+
+      /// Special (Medium) Screen Media Queries //// 
+          @media all and (min-width: 750px) and (max-width: 999px) {
+            background: red;
+            width: 31%;
+            margin-right: 14px;
+            height: 240px;
+          }
+				
+			// Medium Screen Media Queries // 
+    			@media all and (min-width: 1000px) and (max-width: 1199px){
+   				background: blue;
+   				width: 32%;
+   				margin-right: 12px;
+          height: 240px;
+
+   				}
+
+   			// Large Screen Media Queries // 
+    			@media all and (min-width: 1200px) and (max-width: 1499px) {
+   				width: 24%;
+          background: yellow;
+          height: 240px;
+   				}
+
+   			// Extra Large Screen Media Queries // 
+    			@media all and (min-width: 1500px) {
+   					background: green;
+   					width: 24%;
+            height: 240px;
+   				}
+
+	&:first-child {margin-right: 25px;}
 }
 
-// Project Card Transition // 
 
-img#project{
-  -webkit-filter: grayscale(1);
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  filter: url(#greyscale);
-  filter: gray;
+.project-info {
+  padding: 1rem;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  background: red;
 }
 
 
-// Footer // 
+
+//END Project Cards //
+
+
+
+////////////////////////////////////////////// Footer //////////////////////////////////////////////
 
 .footer{
    width: 100%;
@@ -141,252 +301,5 @@ img#project{
    color: #333;
 }
 
-//----------------------------------------- Smaller Screens ------------------------------//
+//END Footer //
 
-//----------------------- iPhone Portrait --------------//
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
-  	
-  	.flex-container{
-		display: -webkit-flex;
-    	display: flex;
-    	-webkit-flex-wrap: wrap;
-    	flex-wrap: wrap;
-    	width: 90%;
-    	margin: auto;
-    	flex-direction: row;
-    	justify-content: space-between;
-    	padding-bottom: 25px;
-    	padding-top: 25px;
-	}
-
-  	.flex-project{
-  		background: pink;
-  		padding: 5px;
-  		width: 100%;
-  		height: 175px;
-  		margin-top: 20px;
-
-  	}
-
-  	.header{
-	   width: 100%;
-	   height: 40px;
-	   padding-bottom: 20px;
-	   padding-top: 10px;
-	   font-family: 'Montserrat', Helvetica, sans-serif;
-	   text-transform: uppercase;
-	   color: #333;
-	}
-
-	.left{
-		width: 55%;
-		float: left;
-		font-size: 1em;
-	}
-
-
-	.right{
-		width: 45%;
-		float: right;
-		text-align: right;
-		font-size: .7em;
-		padding-top: 7px;
-	}
-
-	span{
-		padding-left: 8px;
-	}
-
-
-} // END -------------------------------------// 
-
-//------------------------ iPhone Landscape ----------------------------------/
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) { 
-  	.flex-container{
-		display: -webkit-flex;
-    	display: flex;
-    	-webkit-flex-wrap: wrap;
-    	flex-wrap: wrap;
-    	width: 90%;
-    	margin: auto;
-    	flex-direction: row;
-    	justify-content: space-between;
-    	padding-bottom: 25px;
-    	padding-top: 25px;
-	}
-
-  	.flex-project{
-  		background: pink;
-  		padding: 5px;
-  		width: 290px;
-  		height: 175px;
-  		margin-top: 20px;
-
-  	}
-
-  	.header{
-	   width: 98%;
-	   height: 40px;
-	   padding-bottom: 20px;
-	   padding-top: 10px;
-	   font-family: 'Montserrat', Helvetica, sans-serif;
-	   text-transform: uppercase;
-	   color: #333;
-	}
-
-	.left{
-		width: 55%;
-		float: left;
-		font-size: 1em;
-	}
-
-
-	.right{
-		width: 45%;
-		float: right;
-		text-align: right;
-		font-size: .7em;
-		padding-top: 9px;
-	}
-
-	span{
-		padding-left: 8px;
-	}
-} // END -----------------------------// 
-
-//----------------------------------------- iPad (Vertical) ----------------------- // 
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-  	.flex-container{
-		display: -webkit-flex;
-    	display: flex;
-    	-webkit-flex-wrap: wrap;
-    	flex-wrap: wrap;
-    	width: 730px;
-    	margin: auto;
-    	flex-direction: row;
-    	padding-bottom: 25px;
-    	padding-top: 25px;
-    	padding-left: 18px;
-	}
-
-  	.flex-project{
-  		background: yellow;
-  		margin-right: 25px;
-  		width: 330px;
-  		height: 175px;
-  		margin-top: 20px;
-
-  	}
-
-  	.header{
-	   width: 97%;
-	   height: 40px;
-	   padding-bottom: 20px;
-	   padding-top: 10px;
-	   font-family: 'Montserrat', Helvetica, sans-serif;
-	   text-transform: uppercase;
-	   color: #333;
-	}
-
-	.left{
-		width: 55%;
-		float: left;
-		font-size: 1em;
-	}
-
-
-	.right{
-		width: 35%;
-		float: right;
-		text-align: right;
-		font-size: .7em;
-		padding-top: 7px;
-	}
-
-	span{
-		padding-left: 8px;
-	}
-} // END -----------------------------// 
-
-
-// -------------------------------------- iPAD Horizontal ---------------------------- //
-	@media only screen 
-	  and (min-device-width: 768px) 
-	  and (max-device-width: 1024px) 
-	  and (orientation: landscape) 
-	  and (-webkit-min-device-pixel-ratio: 1) {
-	  	.flex-container{
-		display: -webkit-flex;
-	    display: flex;
-	    -webkit-flex-wrap: wrap;
-	    flex-wrap: wrap;
-	    width: 900px;
-	    margin: auto;
-	    flex-direction: row;
-	    justify-content: space-between;
-	    padding-bottom: 25px;
-	    padding-top: 25px;
-	}
-
-
-	// Header // 
-
-	.header{
-	   width: 97%;
-	   height: 40px;
-	   padding-bottom: 20px;
-	   padding-top: 10px;
-	   font-family: 'Montserrat', Helvetica, sans-serif;
-	   text-transform: uppercase;
-	   color: #333;
-	}
-
-	.left{
-		width: 48%;
-		float: left;
-		font-size: 1.25em;
-	}
-
-	.right{
-		width: 40%;
-		float: right;
-		text-align: right;
-		font-size: .7em;
-		padding-top: 9px;
-	}
-
-	// Project Cards // 
-
-	.flex-project{
-		background: skyblue;
-		margin-right: 25px;
-  		width: 275px;
-  		height: 175px;
-  		margin-top: 20px;
-
-	}
-
-	// Footer // 
-
-	.footer{
-	   width: 100%;
-	   height: 30px;
-	   padding-top: 25px;
-	   font-size: .5em;
-	   font-family: 'Montserrat', Helvetica, sans-serif;
-	   text-transform: uppercase;
-	   color: #333;
-	}
-} // END -----------------------------// 
