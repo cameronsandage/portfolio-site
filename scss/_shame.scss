@@ -36,14 +36,5 @@
    // .site-nav a{
    //     color:#BADA55!important;
    // }
-.grid{
-	@include container(1140px); position: absolute; z-index: 10000; top: 0; bottom: 0; left: 0; right: 0; 
-}
-.column{
-	@include span(1 of 12);
-	background:pink; 
-	height: 1000px;
-	opacity: .2; 
-	&:last-child {@include span(1 of 12 last);}
-}
+
 

@@ -1,0 +1,364 @@
+// @source http://smacss.com/book/type-base
+//
+// Base Rules
+//
+// A Base rule is applied to an element using an element selector, a
+// descendent selector, or a child selector, along with any pseudo-classes.
+// It doesn’t include any class or ID selectors. It is defining the default
+// styling for how that element should look in all occurrences on the page.
+
+// ==========================================================================
+// $Normalize
+// ==========================================================================
+@import 'normalize';
+
+// ==========================================================================
+// $Base
+// ==========================================================================
+@import 'base';
+
+body{
+	color: #333;
+	font-family: 'Gentium Book Basic', Georgia, serif;
+}
+
+////////////////////////////////////////////// CONTAINER //////////////////////////////////////////////
+
+.flex-container{
+	 display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    flex-direction: row;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    max-width: 1200px;
+    width: 100%;	
+    
+    	// Smaller Screen Media Queries // 
+   				@media all and (min-width: 320px) {
+   					padding-left: 15px;
+   					padding-right: 15px;
+   				}
+				
+			// Medium Screen Media Queries // 
+    			@media all and (min-width: 655px) {
+    				padding-left: 25px;
+   					padding-right: 25px;
+   				}
+
+   			// Large Screen Media Queries // 
+    			@media all and (min-width: 700px) {
+   					padding-left: 25px;
+   					padding-right: 25px;
+   				}
+
+   			// Extra Large Screen Media Queries // 
+    			@media all and (min-width: 1022px) {
+   					padding-left: 50px;
+   					padding-right: 50px;
+   					justify-content: space-between;
+   				}
+}
+
+
+//END CONTAINER // 
+
+////////////////////////////////////////////// Header //////////////////////////////////////////////
+
+.header{
+   width: 95%;
+   height: 40px;
+   padding-bottom: 20px;
+   padding-top: 10px;
+   font-family: 'Montserrat', Helvetica, sans-serif;
+   text-transform: uppercase;
+   color: #333;
+}
+
+.left{
+	float: left;
+	font-size: 1.25em;
+			// Smaller Screen Media Queries // 
+   				@media all and (min-width: 320px) {
+   					width: 50%;
+   					font-size: .8em;
+   				}
+
+   				//// Special (Larger Phone) Screen Media Queries //// 
+   				@media all and (min-width: 336px) {
+   					width: 52%;
+   					font-size: .9em;
+   				}
+				
+			// Medium Screen Media Queries // 
+    			@media all and (min-width: 655px) {
+    				width: 50%;
+
+
+   				}
+
+   			// Large Screen Media Queries // 
+    			@media all and (min-width: 700px) {
+   					width: 50%;
+   				}
+
+   			// Extra Large Screen Media Queries // 
+    			@media all and (min-width: 1022px) {
+   					width: 50%;
+   				}
+}
+
+.right{
+	float: right;
+	text-align: right;
+	font-size: .7em;
+	padding-top: 9px;
+			// Smaller Screen Media Queries // 
+   				@media all and (min-width: 320px) {
+
+   					font-size: .6em;
+   					padding-top: 4px;
+   				}
+
+   				//// Special (Larger Phone) Screen Media Queries //// 
+   				@media all and (min-width: 336px) {
+
+   					font-size: .7em;
+   					padding-top: 5px;
+   				}
+				
+			// Medium Screen Media Queries // 
+    			@media all and (min-width: 655px) {
+
+
+   				}
+
+   			// Large Screen Media Queries // 
+    			@media all and (min-width: 700px) {
+
+   				}
+
+   			// Extra Large Screen Media Queries // 
+    			@media all and (min-width: 1022px) {
+
+   				}
+}
+
+
+/* unvisited link */
+.header a:link {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* visited link */
+.header a:visited {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* mouse over link */
+.header a:hover {
+    color: #808080;
+    border-bottom: 1px solid #808080;
+}
+
+/* selected link */
+.header a:active {
+    color: 333;
+    text-decoration: none;
+}
+
+a.navigation-link {
+  padding: 0px 10px;
+  word-wrap: normal;
+  display: inline-block;
+}
+
+span{
+	padding-left: 15px;
+			// Smaller Screen Media Queries // 
+   				@media all and (min-width: 320px) {
+   					padding-left: 5px;
+   				}
+				
+			// Medium Screen Media Queries // 
+    			@media all and (min-width: 655px) {
+    				padding-left: 10px;
+
+   				}
+}
+
+//END HEADER // 
+
+
+////////////////////////////////////////////// Project Cards //////////////////////////////////////////////
+
+.
+
+.flex-project{
+  margin-top: 20px;
+  cursor: pointer;
+  background-size: cover;
+  			// Smaller Screen Media Queries // 
+   				@media all and (min-width: 320px){
+   				background: pink;
+   				width: 100%;
+          height: 165px;
+
+   				}
+
+        //// Special (Larger Phone) Screen Media Queries //// 
+          @media all and (min-width: 530px){
+          background: purple;
+          width: 48%;
+          margin-right: 10px;
+          height: 240px;
+          }
+
+
+
+   			//// Special (Larger Phone) Screen Media Queries //// 
+   				@media all and (min-width: 630px){
+   				background: teal;
+   				width: 48%;
+          margin-right: 12px;
+          height: 240px;
+
+   				}
+				
+			// Medium Screen Media Queries // 
+    			@media all and (min-width: 1025px){
+   				background: blue;
+   				width: 32%;
+   				margin-right: 12px;
+          height: 240px;
+
+   				}
+        }
+
+
+.projectTitle{
+    background-color: #000;
+    opacity: .8;
+    height: 35px;
+    padding-left: 10px;
+    padding-top: 8px;
+        // Large Screen Media Queries // 
+          @media all and (min-width: 530px){
+            margin-top: 205px;
+          }
+          
+          @media all and (min-width: 320px) and (max-width: 529px) {
+            margin-top: 130px;
+          }
+}
+
+.flex-container a:link{
+  text-decoration: none;
+  color: red;
+}
+
+.flex-container a:hover{
+  color: red;
+}
+
+.flex-container a:visited{
+  text-decoration: none;
+  color: #ccc;
+}
+
+
+
+
+
+/* unvisited link */
+.header a:link {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* visited link */
+.header a:visited {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* mouse over link */
+.header a:hover {
+    color: #808080;
+    border-bottom: 1px solid #808080;
+}
+
+/* selected link */
+.header a:active {
+    color: 333;
+    text-decoration: none;
+}
+
+
+
+
+
+//END Project Cards //
+
+
+
+////////////////////////////////////////////// Footer //////////////////////////////////////////////
+
+.footer{
+   width: 100%;
+   height: 30px;
+   padding-top: 25px;
+   font-size: .5em;
+   font-family: 'Montserrat', Helvetica, sans-serif;
+   text-transform: uppercase;
+   color: #333;
+}
+
+//END Footer //
+
+
+////////////////////////////////////////////// Project Pages //////////////////////////////////////////////
+
+.flex-1{
+    margin-top: 20px;
+    width: 100%;
+    height: 450px;
+    background-color: orange;
+    margin-right: 12px;
+}
+
+
+
+.flex-2{
+  margin-top: 20px;
+    // Smaller Screen Media Queries // 
+          @media all and (min-width: 320px){
+          background: pink;
+          width: 100%;
+          height: 165px;
+
+          }
+
+        //// Special (Larger Phone) Screen Media Queries //// 
+          @media all and (min-width: 630px){
+          background: teal;
+          width: 48%;
+           margin-right: 12px;
+          height: 240px;
+
+          }
+        
+      // Medium Screen Media Queries // 
+          @media all and (min-width: 1025px){
+          background: blue;
+          width: 32%;
+          margin-right: 12px;
+          height: 450px;
+
+          }
+        }
+

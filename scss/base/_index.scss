@@ -22,10 +22,11 @@ body{
 	font-family: 'Gentium Book Basic', Georgia, serif;
 }
 
+
 ////////////////////////////////////////////// CONTAINER //////////////////////////////////////////////
 
 .flex-container{
-	display: -webkit-flex;
+	  display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -33,8 +34,8 @@ body{
     flex-direction: row;
     padding-bottom: 25px;
     padding-top: 25px;
-    max-width: 1200px;
-    width: 100%;	
+    max-width: 1250px;
+    width: 99%;	
     
     	// Smaller Screen Media Queries // 
    				@media all and (min-width: 320px) {
@@ -68,7 +69,7 @@ body{
 ////////////////////////////////////////////// Header //////////////////////////////////////////////
 
 .header{
-   width: 95%;
+   width: 99%;
    height: 40px;
    padding-bottom: 20px;
    padding-top: 10px;
@@ -82,7 +83,7 @@ body{
 	font-size: 1.25em;
 			// Smaller Screen Media Queries // 
    				@media all and (min-width: 320px) {
-   					width: 50%;
+   					width: 55%;
    					font-size: .8em;
    				}
 
@@ -117,14 +118,14 @@ body{
 	padding-top: 9px;
 			// Smaller Screen Media Queries // 
    				@media all and (min-width: 320px) {
-
-   					font-size: .6em;
+   					width: 42%;
+            font-size: .6em;
    					padding-top: 4px;
    				}
 
    				//// Special (Larger Phone) Screen Media Queries //// 
    				@media all and (min-width: 336px) {
-
+            width: 48%;
    					font-size: .7em;
    					padding-top: 5px;
    				}
@@ -146,27 +147,53 @@ body{
    				}
 }
 
+/* LEFT NAVIGATOIN link styles */
+.left a:link {
+    color: #333;
+    text-decoration: none;
+}
 
-/* unvisited link */
-.header a:link {
+/* visited link */
+.left a:visited {
+     color: #333;
+    text-decoration: none;
+}
+
+/* mouse over link */
+.left a:hover {
+     color: #333;
+    text-decoration: none;
+}
+
+/* selected link */
+.left a:active {
+   color: #333;
+    text-decoration: none;
+}
+
+
+
+
+/*  RIGHT NAVIGATION unvisited link */
+.right a:link {
     color: #ccc;
     text-decoration: none;
 }
 
 /* visited link */
-.header a:visited {
+.right a:visited {
     color: #ccc;
     text-decoration: none;
 }
 
 /* mouse over link */
-.header a:hover {
+.right a:hover {
     color: #808080;
     border-bottom: 1px solid #808080;
 }
 
 /* selected link */
-.header a:active {
+.right a:active {
     color: 333;
     text-decoration: none;
 }
@@ -177,129 +204,168 @@ a.navigation-link {
   display: inline-block;
 }
 
-span{
-	padding-left: 15px;
-			// Smaller Screen Media Queries // 
-   				@media all and (min-width: 320px) {
-   					padding-left: 5px;
-   				}
-				
-			// Medium Screen Media Queries // 
-    			@media all and (min-width: 655px) {
-    				padding-left: 10px;
-
-   				}
+ul.right{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
+
+li{
+  display: inline;
+  padding-left: 15px;
+}
+
+
 
 //END HEADER // 
 
 
 ////////////////////////////////////////////// Project Cards //////////////////////////////////////////////
 
-.flex-project{
+
+
+.portfolioCard{
   margin-top: 20px;
+  font-size: 14px;
   background-size: cover;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  flex-wrap: wrap;
+  -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
   			// Smaller Screen Media Queries // 
    				@media all and (min-width: 320px){
-   				background: pink;
    				width: 100%;
           height: 165px;
-
    				}
 
         //// Special (Larger Phone) Screen Media Queries //// 
           @media all and (min-width: 530px){
-          background: purple;
           width: 48%;
           margin-right: 10px;
-          height: 240px;
+          height: 180px;
           }
 
 
-
-   			//// Special (Larger Phone) Screen Media Queries //// 
-   				@media all and (min-width: 630px){
-   				background: teal;
-   				width: 48%;
-          margin-right: 12px;
-          height: 240px;
-
-   				}
 				
 			// Medium Screen Media Queries // 
     			@media all and (min-width: 1025px){
-   				background: blue;
    				width: 32%;
-   				margin-right: 12px;
-          height: 240px;
-
+   				margin-right: 4px;
+          height: 180px;
    				}
+        }
 
-
-	
-}
 
 
 .projectTitle{
-    background-color: #000;
-    opacity: .8;
-    height: 35px;
+    color: #FFF;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.64) 48%,rgba(0,0,0,0.8) 60%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */    height: 55px;
     padding-left: 10px;
-    padding-top: 8px;
+    padding-top: 28px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    letter-spacing: 1.25px;
         // Large Screen Media Queries // 
-          @media all and (min-width: 530px){
-            margin-top: 205px;
+       @media all and (min-width: 320px) {
+            margin-top: 110px;
           }
-          
-          @media all and (min-width: 320px) and (max-width: 529px) {
-            margin-top: 130px;
+
+          @media all and (min-width: 530px) {
+            margin-top: 125px;
+          }
+
+          @media all and (min-width: 1000px){
+            margin-top: 125px;
           }
 }
 
-.projectTitle a:link{
+span#smallerText{
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #939598;
+  font-size: 10px;
+}
+
+.portfolioCard:hover{
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+}
+
+a:link, a:hover, a:visited, a:active{
   text-decoration: none;
-  color: red;
 }
 
-.projectTitle a:hover{
-  color: red;
-}
-
-.projectTitle a:visited{
+.projectTitle:link{
   text-decoration: none;
-  color: #ccc;
 }
 
-
-
-
-
-/* unvisited link */
-.header a:link {
-    color: #ccc;
+.projectTitle:visited{
     text-decoration: none;
 }
 
-/* visited link */
-.header a:visited {
-    color: #ccc;
-    text-decoration: none;
-}
-
-/* mouse over link */
-.header a:hover {
-    color: #808080;
-    border-bottom: 1px solid #808080;
-}
-
-/* selected link */
-.header a:active {
-    color: 333;
+.projectTitle:active{
     text-decoration: none;
 }
 
 
 
+// // Special Projects // 
+
+// .portfolioCardspecial{
+//   margin-top: 20px;
+//   background-size: cover;
+//   font-size: 12px;
+//   font-family: 'Montserrat', Helvetica, sans-serif;
+//   text-transform: uppercase;
+//         // Smaller Screen Media Queries // 
+//           @media all and (min-width: 320px){
+//           width: 100%;
+//           }
+
+//         //// Special (Larger Phone) Screen Media Queries //// 
+//           @media all and (min-width: 530px){
+//           width: 48%;
+//           }
+
+
+//         //// Special (Larger Phone) Screen Media Queries //// 
+//           @media all and (min-width: 630px){
+//           width: 48%;
+
+//           }
+        
+//       // Medium Screen Media Queries // 
+//           @media all and (min-width: 1025px){
+//           width: 23%;
+//           }
+//         }
+
+
+
+// .projectTitleSpecial{
+//     color: #ccc;
+//     border-color: #ccc;
+//     border-width: .5px;
+//     border-style: solid;
+//     text-align: center;
+//     height: 25px;
+//     padding-top: 5px;
+//     text-decoration: none;
+// }
+
+// .portfolioCardspecial:hover{
+//     background-color: #f1f2f2;
+//     -webkit-transition: .2s ease-in-out;
+//     -moz-transition: .2s ease-in-out;
+//     -o-transition: .2s ease-in-out;
+// }
 
 
 //END Project Cards //
@@ -319,4 +385,187 @@ span{
 }
 
 //END Footer //
+
+
+////////////////////////////////////////////// Project Pages //////////////////////////////////////////////
+
+
+.content{
+    padding-top: 20px;
+    display: block;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.projectName{
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #333;
+  font-size: 16px;
+  padding-bottom: 7px;
+}
+
+span#company{
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #939598;
+  font-size: 12px;
+}
+
+.projectType{
+  font-size: 12px;
+  color: #939598;
+  padding-bottom: 10px;
+}
+
+.collaborators{
+  font-size: 12px;
+  color: #939598;
+  padding-top: 5px;
+  line-height: 1.2rem;
+}
+
+.people:link, .people:active, .people:visited{
+  text-decoration: none;
+  color: #939598;
+}
+
+.people:hover{
+  text-decoration: underline;
+}
+
+span#emDash{
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #939598;
+}
+
+span#emDashBottom{
+  padding-top: 2px;
+  padding-bottom: 20px;
+  color: #939598;
+  width: 100%;
+}
+
+span#bullet{
+  color: #939598;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+
+#col_2{
+  -moz-column-width:32em;
+  -moz-columns:32em;
+  -webkit-columns:32em;
+  columns: 32em;
+  font-size: 15px;
+  line-height: 1.65rem;
+
+}
+
+
+.descriptionHeading{
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  color: #939598;
+}
+
+.placedCopy{
+    padding-top: 40px;
+}
+
+
+p{
+  margin: 0px;
+  padding: 0px;
+}
+
+p.secondP{
+    padding-top: 15px;
+}
+
+
+.hero{
+    margin-bottom: 15px;
+    margin-top:20px;
+    margin: 0 auto;
+}
+
+.heroPage{
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+      @media all and (min-width: 320px){
+        padding-bottom: 10px;
+      }
+}
+
+.heroPage2{
+    margin: 0 auto;
+    padding-bottom: 20px;
+      @media all and (min-width: 320px){
+        padding-bottom: 10px;
+      }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.twoImages{
+  
+    // Smaller Screen Media Queries // 
+          @media all and (min-width: 320px){
+          width: 100%;
+          height: auto;
+          padding-bottom: 10px;
+          }
+
+        //// Special (Larger Phone) Screen Media Queries //// 
+          @media all and (min-width: 630px){
+          width: 49%;
+          margin-right: 6px;
+          height: auto;
+
+          }
+        
+      // Medium Screen Media Queries // 
+          @media all and (min-width: 1025px){
+          width: 48.9%;
+          height: auto;
+          }
+        }
+
+.threeImages{
+  margin-top: 20px;
+    // Smaller Screen Media Queries // 
+          @media all and (min-width: 320px){
+          width: 100%;
+          height: auto;
+          padding-bottom: 10px;
+          }
+
+        //// Special (Larger Phone) Screen Media Queries //// 
+          @media all and (min-width: 630px){
+          width: 48%;
+          margin-right: 12px;
+          height: auto;
+          }
+        
+      // Medium Screen Media Queries // 
+          @media all and (min-width: 1025px){
+          width: 32%;
+          margin-right: 12px;
+          height: auto;
+          padding-bottom: 10px;
+          }
+        }
+
 
