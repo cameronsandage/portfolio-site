@@ -472,6 +472,15 @@ span#bullet{
   padding-bottom: 5px;
   padding-top: 10px;
   color: #939598;
+  width: 100%;
+}
+
+.imageCaption{
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-top: 10px;
 }
 
 .placedCopy{
@@ -486,6 +495,18 @@ p{
 
 p.secondP{
     padding-top: 15px;
+}
+
+p.specialP{
+    margin: 0px;
+    padding: 0px;
+    @media all and (min-width: 330px){
+      padding-top: 15px;
+    }
+
+    @media all and (min-width: 1025px){
+      padding-top: 0px;
+    }
 }
 
 
@@ -557,6 +578,7 @@ img {
           width: 48%;
           margin-right: 12px;
           height: auto;
+          margin: 0, auto;
           }
         
       // Medium Screen Media Queries // 
@@ -565,6 +587,32 @@ img {
           margin-right: 12px;
           height: auto;
           padding-bottom: 10px;
+          }
+        }
+
+
+.video{
+  padding-top: 20px;
+  width: 100%;
+    // Smaller Screen Media Queries // 
+          @media all and (min-width: 320px){
+          width: 100%;
+          height: auto;
+          padding-bottom: 10px;
+          }
+
+        //// Special (Larger Phone) Screen Media Queries //// 
+          @media all and (min-width: 630px){
+          width: 49%;
+          margin-right: 6px;
+          height: auto;
+
+          }
+        
+      // Medium Screen Media Queries // 
+          @media all and (min-width: 1025px){
+          width: 48.9%;
+          height: auto;
           }
         }
 

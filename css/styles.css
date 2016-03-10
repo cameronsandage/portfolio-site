@@ -611,7 +611,15 @@ span#bullet {
   font-size: 12px;
   padding-bottom: 5px;
   padding-top: 10px;
-  color: #939598; }
+  color: #939598;
+  width: 100%; }
+
+.imageCaption {
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-top: 10px; }
 
 .placedCopy {
   padding-top: 40px; }
@@ -622,6 +630,16 @@ p {
 
 p.secondP {
   padding-top: 15px; }
+
+p.specialP {
+  margin: 0px;
+  padding: 0px; }
+  @media all and (min-width: 330px) {
+    p.specialP {
+      padding-top: 15px; } }
+  @media all and (min-width: 1025px) {
+    p.specialP {
+      padding-top: 0px; } }
 
 .hero {
   margin-bottom: 15px;
@@ -673,13 +691,32 @@ img {
     .threeImages {
       width: 48%;
       margin-right: 12px;
-      height: auto; } }
+      height: auto;
+      margin: 0, auto; } }
   @media all and (min-width: 1025px) {
     .threeImages {
       width: 32%;
       margin-right: 12px;
       height: auto;
       padding-bottom: 10px; } }
+
+.video {
+  padding-top: 20px;
+  width: 100%; }
+  @media all and (min-width: 320px) {
+    .video {
+      width: 100%;
+      height: auto;
+      padding-bottom: 10px; } }
+  @media all and (min-width: 630px) {
+    .video {
+      width: 49%;
+      margin-right: 6px;
+      height: auto; } }
+  @media all and (min-width: 1025px) {
+    .video {
+      width: 48.9%;
+      height: auto; } }
 
 .border {
   background: blue;
