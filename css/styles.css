@@ -499,7 +499,8 @@ li {
   text-transform: uppercase;
   font-size: 11px;
   font-family: 'Montserrat', Helvetica, sans-serif;
-  letter-spacing: 1.25px; }
+  letter-spacing: 1.25px;
+  cursor: pointer; }
   @media all and (min-width: 320px) {
     .projectTitle {
       margin-top: 110px; } }
@@ -557,6 +558,22 @@ a:link, a:hover, a:visited, a:active {
   font-size: 16px;
   padding-bottom: 7px; }
 
+.projectName2 {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #333;
+  font-size: 12px;
+  padding-bottom: 15px;
+  padding-top: 7px; }
+
+.projectNameSmall {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #333;
+  font-size: 10px;
+  padding-bottom: 5px;
+  padding-top: 200px; }
+
 span#company {
   font-family: 'Montserrat', Helvetica, sans-serif;
   text-transform: uppercase;
@@ -578,13 +595,29 @@ span#company {
   text-decoration: none;
   color: #939598; }
 
+.peopleInline:link, .peopleInline:active, .peopleInline:visited {
+  text-decoration: underline;
+  color: #333; }
+
+.peopleInline:hover {
+  color: #939598; }
+
+.peopleSmall:link, .peopleSmall:active, .peopleSmall:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 10px; }
+
+.peopleSmall:hover {
+  color: #939598; }
+
 .people:hover {
   text-decoration: underline; }
 
 span#emDash {
   padding-top: 2px;
   padding-bottom: 2px;
-  color: #939598; }
+  color: #939598;
+  width: 100%; }
 
 span#emDashBottom {
   padding-top: 2px;
@@ -592,10 +625,23 @@ span#emDashBottom {
   color: #939598;
   width: 100%; }
 
+span#emDashMid {
+  padding-top: 2px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  color: #939598;
+  width: 100%; }
+
 span#bullet {
   color: #939598;
   padding-left: 2px;
   padding-right: 2px; }
+
+span#bullet2 {
+  color: #939598;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-size: 10px; }
 
 #col_2 {
   -moz-column-width: 32em;
@@ -605,18 +651,72 @@ span#bullet {
   font-size: 15px;
   line-height: 1.65rem; }
 
+span#large {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  padding-top: 20px; }
+
+span#largeBold {
+  font-weight: 900;
+  font-size: 18px;
+  color: #e74d4d; }
+
+#noCol {
+  font-size: 15px;
+  line-height: 1.65rem; }
+
+@media all and (min-width: 320px) {
+  #col-1 {
+    width: 100%; } }
+@media all and (min-width: 630px) {
+  #col-1 {
+    width: 100%; } }
+@media all and (min-width: 1025px) {
+  #col-1 {
+    width: 80%; } }
+
+@media all and (min-width: 320px) {
+  .intro {
+    font-size: 18px;
+    line-height: 1.85rem; } }
+@media all and (min-width: 1025px) {
+  .intro {
+    font-size: 22px;
+    line-height: 2.25rem; } }
+
+.subCopy {
+  padding-top: 10px;
+  font-size: 16px;
+  line-height: 1.5rem;
+  color: #4d4d4d; }
+
+.subCopy2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5rem;
+  color: #4d4d4d; }
+
+.subCopySmall {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.5rem;
+  color: #4d4d4d; }
+
 .descriptionHeading {
   font-family: 'Montserrat', Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 12px;
   padding-bottom: 5px;
   padding-top: 10px;
-  color: #939598;
   width: 100%; }
 
 .imageCaption {
   text-align: center;
   font-size: 12px;
+  line-height: 150%;
   padding-bottom: 5px;
   padding-top: 10px;
   padding-top: 10px; }
@@ -641,10 +741,47 @@ p.specialP {
     p.specialP {
       padding-top: 0px; } }
 
+.heroText {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  background-color: #f1f1f2; }
+
+span#titleCreed {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-bottom: 5px;
+  padding-top: 20px;
+  width: 100%; }
+
+span#special {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 32px;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  width: 100%; }
+
+.creedText {
+  font-size: 14px;
+  font-weight: 200;
+  margin: 0 auto;
+  line-height: 150%; }
+  @media all and (min-width: 330px) {
+    .creedText {
+      width: 78%; } }
+  @media all and (min-width: 1025px) {
+    .creedText {
+      width: 48%; } }
+
 .hero {
   margin-bottom: 15px;
   margin-top: 20px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  min-width: 0; }
 
 .heroPage {
   margin: 0 auto;
@@ -679,6 +816,21 @@ img {
   .twoImages {
     width: 48.9%;
     height: auto; } }
+
+.bio {
+  margin: 0;
+  padding: 0; }
+  @media all and (min-width: 320px) {
+    .bio {
+      width: 100%;
+      padding-bottom: 0px;
+      margin-bottom: 0px; } }
+  @media all and (min-width: 630px) {
+    .bio {
+      width: 50%; } }
+  @media all and (min-width: 1025px) {
+    .bio {
+      width: 50%; } }
 
 .threeImages {
   margin-top: 20px; }
